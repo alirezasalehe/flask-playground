@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from environs import Env
 
 import redis
 
@@ -35,4 +36,4 @@ class RedisDBService(DBService):
         return url.decode()
 
 
-db_service = RedisDBService(host='localhost', port=6379, db=0)
+db_service = RedisDBService(host=Env().str('REDIS_LOCATION'), port=6379, db=0)

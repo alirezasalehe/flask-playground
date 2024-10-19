@@ -1,4 +1,6 @@
-### Usage
+## Usage
+
+### Running on local:
 
 Install requirements: ```pip install -r requirements.txt```
 
@@ -8,7 +10,10 @@ Shorten a URL: ```curl -X POST http://localhost:5000/shorten -H "Content-Type: a
 
 Use shortened URL: ```curl http://localhost:5000/{response_of_previous_curl}```
 
-### TODO
-- Dockerize project
+### Using docker:
+
+Run: ```docker compose up --build```
+
+## TODO
 - Add postgres database
 - Write tests

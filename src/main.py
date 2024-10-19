@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect
+from environs import Env
 
 from db_service import db_service, UrlNotFoundException
 from utils import random_string_generator
@@ -27,4 +28,4 @@ def short_url():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=Env().str('FLASK_PORT'))
